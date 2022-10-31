@@ -1,0 +1,133 @@
+body{
+    margin: 0px;
+    padding: 0px;    
+}
+
+.grid-container{
+    display: grid;
+    height:100vh;
+    grid-template-areas: 
+    'menu'
+    'filter'
+    'main'
+    'pager'
+    'footer';
+    
+}
+
+/*Menu*/ 
+.menu{ 
+    background-color: #CF0A0A;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    grid-area: menu;   
+}
+
+.menu i{
+    margin: 10px;
+}
+
+/*Filter*/
+.filter{
+    background-color: #EEEEEE;
+    padding: 20px;
+    grid-area: filter;
+    text-align: center;    
+}
+
+.filter div{
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.filter select{
+    width: 200px;
+    padding: 10px;   
+}
+
+.fa-solid fa-car{
+    margin-right: 30px;
+}
+
+/* Main Product*/
+.main{
+    grid-area: main;
+    grid-template-columns: 1fr;
+    overflow: auto;    
+}
+
+.car{
+    margin: 10px solid black;
+    display: flex;    
+    flex-direction: column;
+    text-align: center;  
+    padding: 25px;
+    align-items: center;
+   
+}
+
+.car div{
+    padding: 20px;
+}
+
+.car img{
+    width: 100%;
+    border: 0.1px solid #C0C6C8;
+}
+
+.car button{
+    background-color: #CF0A0A;
+    color: white;   
+    border: 0.5px solid #C0C6C8;
+    border-top: 0px;
+    padding: 10px 15px;  
+    width: 200px;
+    
+}
+
+/* Pager */
+.pager{
+    background-color: #EEEEEE;
+    grid-area: pager;
+    text-align: center;
+    padding: 10px;    
+}
+
+.pager button{
+    background-color: white;
+    border: 0.5px solid #EEEEEE;
+    color: black;
+    padding: 10px;    
+}
+
+/* Footer */
+.footer{
+    background-color: #CF0A0A;
+    color: white;
+    grid-area: footer;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.icons{    
+    padding-top: 20px; 
+}
+
+.icons i{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/*Media Queries*/
+/*
+@media (min-width: 576px){
+    .grid-container{
+        grid-template-areas: ;
+    }
+}
+*/
