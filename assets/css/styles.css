@@ -11,8 +11,7 @@ body{
     'filter'
     'main'
     'pager'
-    'footer';
-    
+    'footer';    
 }
 
 /*Menu*/ 
@@ -39,8 +38,8 @@ body{
 }
 
 .filter div{
-    padding-top: 20px;
-    padding-bottom: 5px;
+    padding-top: 20px;    
+    padding-bottom: 15px;
 }
 
 .filter select{
@@ -65,8 +64,7 @@ body{
     flex-direction: column;
     text-align: center;  
     padding: 25px;
-    align-items: center;
-   
+    align-items: center;   
 }
 
 .car div{
@@ -84,8 +82,7 @@ body{
     border: 0.5px solid #C0C6C8;
     border-top: 0px;
     padding: 10px 15px;  
-    width: 200px;
-    
+    width: 200px;    
 }
 
 /* Pager */
@@ -123,11 +120,171 @@ body{
     padding-right: 5px;
 }
 
-/*Media Queries*/
-/*
-@media (min-width: 576px){
+.menu-desktop{
+    display: none;
+}
+
+/*Media Queries Desktop*/
+
+@media (min-width: 992px){
     .grid-container{
-        grid-template-areas: ;
+        display: grid;
+        height: 100vh;           
+        grid-template-areas:
+        'menu filter'
+        'menu main'
+        'footer pager';
+        grid-template-columns: 12fr 88fr;
+        grid-template-rows: 0.5fr 2fr 0.1fr;        
+    }
+
+    /*Menu*/
+    .menu{
+        grid-area: menu;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;                    
+    }
+
+    .bars{
+        display: none;
+    }
+
+    .menu-desktop{
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        color: white;
+        gap: 15px;
+    }
+
+    /* Filter*/
+    .filter{
+        grid-area: filter;
+        padding: 5px;
+        padding-right: 10px;
+        padding-left: 10px;        
+    }
+
+    .filter select{
+        width: 100%;        
+    }
+
+    /*Main*/
+    .main{
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    /*Footer*/
+    .footer{
+        grid-area: footer;
+        text-align: center;
+        
+    }
+
+    /*Pager*/
+    .pager{
+        grid-area: pager;        
+        padding-top: 30px;
     }
 }
-*/
+
+/*Media Queries Tablet*/
+
+@media screen and (min-width: 576px) and  (max-width: 992px){
+    .grid-container{
+        display: grid;
+        height: 100vh;           
+        grid-template-areas:
+        'menu menu'
+        'filter main'
+        'filter pager'
+        'footer footer';
+        grid-template-columns: 1fr 99fr;
+        grid-template-rows: 10fr 80fr 10fr 10fr;                  
+    }
+
+    /* Menu*/
+    .menu{
+        grid-area: menu;
+        padding-right: 30px;
+        padding-left: 10px;
+        display: flex;
+        align-content: center;
+    }
+
+    .menu-desktop{
+        display: flex;              
+        color: white;
+        gap: 30px;
+    }
+
+    /*Filter*/
+    .filter{
+        grid-area: filter;        
+    }
+    
+    .filter div{
+        padding-top: 0px;
+        padding-bottom: 20px;
+    }
+    
+    .filter select{
+        width: 150px;
+        height: 40px;
+        padding: 10px;
+        
+    }
+
+    .bars{
+        display:none;
+    }
+
+    /*Main*/
+    .main{
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 85px;
+        padding-right: 85px;
+        gap: 90px;
+    }
+
+    .car{
+        padding-top: 15px;        
+    }
+
+    .car button{
+        background-color: #CF0A0A;
+        color: white;   
+        border: 0.5px solid #C0C6C8;
+        border-top: 0px;
+        padding: 10px 15px;  
+        width: 100px;    
+    }
+
+    /*Pager*/
+    .pager{
+        grid-area: pager;
+        background-color: white;              
+    }
+
+    .pager button{       
+        padding: 5px;    
+    }
+
+    /*Footer*/
+    .footer{
+        grid-area: footer;
+        padding-bottom: 0px;
+        height: 70;
+        font-size: 12px;
+    }
+
+    .icons{
+        padding-top: 10px;
+        padding-bottom: 0px
+    }    
+}
